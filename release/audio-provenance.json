@@ -1,0 +1,38 @@
+{
+  "model": "hexgrad/Kokoro-82M-v1.1-zh",
+  "voice": "zm_010",
+  "license": "Apache-2.0",
+  "sample_rate": 24000,
+  "cues": {
+    "ready": {
+      "text": "波！",
+      "seconds": 0.47058333333333335,
+      "sha256": "be4ec556a2acac51c3f62f05976cc1fbb213f0923a8058db617dfd91667a252c"
+    },
+    "charge": {
+      "text": "攒！",
+      "seconds": 0.5083333333333333,
+      "sha256": "be545c176559c20aa4afd70bfa2905037f2f492d329204c41a6626f2e62bf98d"
+    },
+    "wave": {
+      "text": "波！",
+      "seconds": 0.471375,
+      "sha256": "4472497a279d169aeaf1e671545e0de3059d2cb74068ad52df1c32c2eba85948"
+    },
+    "guard": {
+      "text": "防！",
+      "seconds": 0.47529166666666667,
+      "sha256": "51e375b731e1a55539d38b380270edbc18b28e66d1c3f68edac8c0cf848da914"
+    },
+    "super": {
+      "text": "强化波！",
+      "seconds": 0.7795833333333333,
+      "sha256": "e180d27da7a5094297c864b6e794abadb29837bd242a577f333383b209e147b4"
+    },
+    "strong_guard": {
+      "text": "强化防！",
+      "seconds": 0.792625,
+      "sha256": "5529a524e1aa5b36c7b471b3d031619f993f8bdff3a669d40a70136d4000d8f8"
+    }
+  }
+}

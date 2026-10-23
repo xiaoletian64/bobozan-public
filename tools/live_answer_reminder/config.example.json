@@ -1,0 +1,9 @@
+{
+  "state_file": "private/reminders.sqlite3",
+  "cooldown_seconds": 120,
+  "repeat_after_seconds": 21600,
+  "speaker": {"type": "console"},
+  "qianguo": {"live_id": "", "headers_file": "private/qianguo-headers.json", "interval_seconds": 15},
+  "lebogou": {"topic_id": "", "headers_file": "private/lebogou-headers.json", "interval_seconds": 15},
+  "lebogou_rules": []
+}

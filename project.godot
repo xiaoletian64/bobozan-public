@@ -1,0 +1,17 @@
+config_version=5
+[application]
+config/icon="res://assets/icon.png"
+boot_splash/image="res://assets/icon.png"
+boot_splash/bg_color=Color(0.08,0.16,0.24,1)
+config/name="波波赞 · 掌心对决"
+run/main_scene="res://main.tscn"
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/handheld/orientation=4
+[rendering]
+textures/vram_compression/import_etc2_astc=true
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.045,0.065,0.10,1)

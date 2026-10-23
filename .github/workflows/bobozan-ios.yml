@@ -1,0 +1,93 @@
+name: bobozan-ios
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_name:
+        required: true
+        type: string
+      build_number:
+        required: true
+        type: string
+      platform:
+        type: choice
+        options: [ios]
+        default: ios
+      release_id:
+        required: false
+        type: string
+
+run-name: ${{ inputs.release_id || 'Manual build' }}
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot 4.4.1 (linux)
+        run: |
+          mkdir -p "$HOME/godot"
+          curl -sL --retry 5 -o "$HOME/godot/godot.zip" \
+            https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -o "$HOME/godot/godot.zip" -d "$HOME/godot"
+          chmod +x "$HOME/godot/Godot_v4.4.1-stable_linux.x86_64"
+      - name: Fetch iOS export template (range-read, ~1GB source)
+        run: python3 tools/fetch_templates.py
+      - name: Place template where Godot expects it
+        run: |
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.4.1.stable"
+          cp builds/templates/ios.zip "$HOME/.local/share/godot/export_templates/4.4.1.stable/ios.zip"
+      - name: Export iOS Xcode project (unsigned)
+        run: |
+          mkdir -p builds/ios
+          "$HOME/godot/Godot_v4.4.1-stable_linux.x86_64" --headless --path . --export-release "iOS" builds/ios/Bobozan
+      - name: Install native BLE bridge into Xcode project
+        run: python3 tools/prepare_ios_native.py
+      - name: Strip simulator slice (device-only artifact, keep quota)
+        run: rm -rf builds/ios/Bobozan.xcframework/ios-arm64_x86_64-simulator
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bobozan-ios-xcode
+          path: builds/ios/
+          retention-days: 7
+
+  package:
+    runs-on: macos-15
+    env:
+      RELEASE_VERSION: ${{ inputs.build_name }}
+      RELEASE_BUILD: ${{ inputs.build_number }}
+    needs: export
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: bobozan-ios-xcode
+      - name: Select Xcode 26 or newer
+        run: |
+          xcode=$(find /Applications -maxdepth 1 -name 'Xcode_26*.app' | sort -V | tail -1)
+          [ -n "$xcode" ] || { echo "Xcode 26 missing"; exit 1; }
+          sudo xcode-select -s "$xcode/Contents/Developer"
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+      - name: Build unsigned device IPA
+        run: |
+          find . -maxdepth 2 -name "*.xcodeproj"
+          proj=$(find . -maxdepth 2 -name "*.xcodeproj" | head -1)
+          [ -n "$proj" ] || { echo "xcodeproj not found"; exit 1; }
+          xcodebuild -list -project "$proj"
+          scheme=$(xcodebuild -list -project "$proj" | awk '/Schemes:/{getline; print $1; exit}')
+          xcodebuild -project "$proj" -scheme "$scheme" \
+            -configuration Release -sdk iphoneos -derivedDataPath build \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO IPHONEOS_DEPLOYMENT_TARGET=15.0 -quiet
+          app=$(find build/Build/Products/Release-iphoneos -maxdepth 1 -name "*.app" | head -1)
+          [ -n "$app" ] || { echo ".app not found"; exit 1; }
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $RELEASE_VERSION" "$app/Info.plist"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $RELEASE_BUILD" "$app/Info.plist"
+          mkdir Payload
+          cp -R "$app" Payload/
+          zip -qry bobozan-ios-unsigned.zip Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bobozan-ios-unsigned-${{ inputs.build_name }}-${{ inputs.build_number }}
+          path: bobozan-ios-unsigned.zip

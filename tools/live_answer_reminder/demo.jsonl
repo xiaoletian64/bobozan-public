@@ -1,0 +1,7 @@
+{"url":"https://api.qianguolive.cn/qg/app/live/getLiveAnswerList/demo-room","body":{"code":0,"data":{"isCanAnswer":false,"newLiveQuestionVO":[]}}}
+{"url":"https://api.qianguolive.cn/qg/app/live/getLiveAnswerList/demo-room","body":{"code":0,"data":{"isCanAnswer":true,"newLiveQuestionVO":[{"questionNo":1,"title":"离线测试题"}]}}}
+{"url":"https://api.qianguolive.cn/qg/app/live/getLiveAnswerList/demo-room","body":{"code":0,"data":{"isCanAnswer":true,"newLiveQuestionVO":[{"questionNo":1,"title":"离线测试题"}]}}}
+{"url":"https://api.qianguolive.cn/qg/app/live/jumpPage","request":{"liveId":"demo-room"},"body":{"code":0,"data":{"liveJumpPageEnum":"ANSWER_POPUP"}}}
+{"url":"https://liveapi.njyqkj0ksyz.com/unknown","body":{"answer":true,"message":"未确认的字段不触发提醒"}}
+{"url":"https://live-gw.njyqkj0ksyz.com/generic/v1/h5/answer/get_question_list","request":{"topicId":"demo-topic"},"body":{"code":0,"isok":true,"dataObj":{"answerReward":{"id":7,"state":1},"answered":false}}}
+{"url":"https://live-gw.njyqkj0ksyz.com/generic/v1/h5/answer/get_question_list","request":{"topicId":"demo-topic"},"body":{"code":0,"isok":true,"dataObj":{"answerReward":{"id":7,"state":1},"answered":false}}}

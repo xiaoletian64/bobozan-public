@@ -1,0 +1,38 @@
+{
+  "source": "Archived early prototype macOS system speech WAVs, restored unchanged at user request",
+  "archive": "builds/legacy-system-voice",
+  "voice_label": "初版女声",
+  "license_note": "Original system-speech prototype provenance retained; no new model or commercial license claim.",
+  "files": {
+    "super.wav": {
+      "seconds": 0.3275736961451247,
+      "sample_rate": 22050,
+      "sha256": "90e06b585a63693aaeef1123e07aadad7e923a13c9f547fe6d1e53afd3cfa5fb"
+    },
+    "guard.wav": {
+      "seconds": 0.22689342403628118,
+      "sample_rate": 22050,
+      "sha256": "d8e9b8fd3fe49f207e6131dde1502b2eba30d2b91bed0a79818057b0b0f5b694"
+    },
+    "charge.wav": {
+      "seconds": 0.20140589569160997,
+      "sample_rate": 22050,
+      "sha256": "f818cd66a376213acdbdd5a0086d97d06b2a6ed1cde6391b74564b6650444861"
+    },
+    "ready.wav": {
+      "seconds": 0.17523809523809525,
+      "sample_rate": 22050,
+      "sha256": "f5a65be78ef511cd0750670c7b7fa41fbe8870be2cde766febcdf25c2038ae42"
+    },
+    "wave.wav": {
+      "seconds": 0.17523809523809525,
+      "sample_rate": 22050,
+      "sha256": "f5a65be78ef511cd0750670c7b7fa41fbe8870be2cde766febcdf25c2038ae42"
+    },
+    "strong_guard.wav": {
+      "seconds": 0.4588208616780045,
+      "sample_rate": 22050,
+      "sha256": "bae353cd0394c4d70b8ae25e2dac068d4fec305e99a3dd2d5c1fabee611ef7ec"
+    }
+  }
+}

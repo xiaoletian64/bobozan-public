@@ -1,0 +1,7 @@
+{
+  "state_file": ":memory:",
+  "cooldown_seconds": 120,
+  "repeat_after_seconds": 21600,
+  "speaker": {"type": "console"},
+  "lebogou_rules": []
+}

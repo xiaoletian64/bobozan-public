@@ -1,0 +1,126 @@
+{
+  "source": "release/audio-provenance.json",
+  "processing": "ffmpeg atempo (pitch preserving), 5ms/15ms fades, gain 0.8",
+  "files": {
+    "ready-0.wav": {
+      "seconds": 0.46879166666666666,
+      "speed": 1.0,
+      "sha256": "dd8aa386699fac30524d1b5a3749a7960d258a0220ac0f5dffbc50fa8df92c27"
+    },
+    "ready-1.wav": {
+      "seconds": 0.404625,
+      "speed": 1.2,
+      "sha256": "ce1929013f78a2bcec582505ba72719088e7ce4debefb039c83ce26e39e6e986"
+    },
+    "ready-2.wav": {
+      "seconds": 0.34883333333333333,
+      "speed": 1.4,
+      "sha256": "d0bfb33e595f834ce8ce4582f85eebeafe488b16fdce0631eee244ca44ddba37"
+    },
+    "ready-3.wav": {
+      "seconds": 0.2937916666666667,
+      "speed": 1.6,
+      "sha256": "06cd13ca998a032c3901fe1b65ef7a0bb7f2b13b43bc305285aa38b9b18fd197"
+    },
+    "ready-4.wav": {
+      "seconds": 0.26425,
+      "speed": 1.8,
+      "sha256": "f19ddc05ec3cfd75c58c6ef5322e3ef6ac8432c2dd490f4570e9a8360a78d5cd"
+    },
+    "ready-5.wav": {
+      "seconds": 0.22366666666666668,
+      "speed": 2.0,
+      "sha256": "4f76a8df0d22fd657ce473c039f7235a4c967d65c96ce67251396113a47fab64"
+    },
+    "charge-0.wav": {
+      "seconds": 0.5014583333333333,
+      "speed": 1.0,
+      "sha256": "3a2a95883be762695fb6e0c81907d104939f95fa1d72c3d4ada94dc58be8ec8a"
+    },
+    "charge-1.wav": {
+      "seconds": 0.4192916666666667,
+      "speed": 1.2,
+      "sha256": "2195408723bfdae1eb7dc29e4a3499eaeecc898660453b58923c9d488d669c9e"
+    },
+    "charge-2.wav": {
+      "seconds": 0.36633333333333334,
+      "speed": 1.4,
+      "sha256": "657d0ad6476d8e456357641fab603820aaf2dd1eef54678f134010586aee86e1"
+    },
+    "charge-3.wav": {
+      "seconds": 0.31404166666666666,
+      "speed": 1.6,
+      "sha256": "e1df7454ae453c86b4b25152feceb31f490850abd50343076a37bed20d148110"
+    },
+    "charge-4.wav": {
+      "seconds": 0.282,
+      "speed": 1.8,
+      "sha256": "28d563eaae1dfa8a3d392bca476bfe43acf2e1c75a1bb66d6060942a58ca39b0"
+    },
+    "charge-5.wav": {
+      "seconds": 0.2639166666666667,
+      "speed": 2.0,
+      "sha256": "4ca9c1512bd1c402838eae1c0760ebd19c2b3caedb1e4013f0101bcccba9462a"
+    },
+    "guard-0.wav": {
+      "seconds": 0.4703333333333333,
+      "speed": 1.0,
+      "sha256": "e1341a01a90bffc18166ec05964ab20dcfd23c1071d2c2cec06618b92b36816e"
+    },
+    "guard-1.wav": {
+      "seconds": 0.4111666666666667,
+      "speed": 1.2,
+      "sha256": "c9fe1fb4357d8a829d483eaec3865247112325548e4884b120c543c43cfba4c5"
+    },
+    "guard-2.wav": {
+      "seconds": 0.33645833333333336,
+      "speed": 1.4,
+      "sha256": "b3d920b7ac09ecfe0654fef3c97c51004586b35ac7890d2b47e92ab82631cd1f"
+    },
+    "guard-3.wav": {
+      "seconds": 0.3125,
+      "speed": 1.6,
+      "sha256": "0f23d11c14168db657258bab5f1249bc8b8b98d750ccb6d751e524c1d8e11ae2"
+    },
+    "guard-4.wav": {
+      "seconds": 0.27325,
+      "speed": 1.8,
+      "sha256": "2cf9051e57b10679d6af88fe72179acdfb9c52025aa79197ca4680aaab4e4094"
+    },
+    "guard-5.wav": {
+      "seconds": 0.22491666666666665,
+      "speed": 2.0,
+      "sha256": "3f1817e291b7563a78b020d1d1c6956a4071a13b357892c447373a36391711d5"
+    },
+    "wave-0.wav": {
+      "seconds": 0.4575,
+      "speed": 1.0,
+      "sha256": "d9cc8f4a22fd5f2e0b8b5d7bcdef4e64c20fb879914d4d1caf02ed34c00fa1c2"
+    },
+    "wave-1.wav": {
+      "seconds": 0.3900416666666667,
+      "speed": 1.2,
+      "sha256": "7d13dd4e4bd27af3a7f2dd590c1ed8bc40b7328d710bd256c8a0dcc8f20697a6"
+    },
+    "wave-2.wav": {
+      "seconds": 0.349,
+      "speed": 1.4,
+      "sha256": "46429a002f507f552048a99a4dccb6f9ce182e266e9af977ac3f24502e1656aa"
+    },
+    "wave-3.wav": {
+      "seconds": 0.2985833333333333,
+      "speed": 1.6,
+      "sha256": "42c4a94ca2707253f42eb8a3cbaa7301917c71efa1b6444f3a47e4996a7334a4"
+    },
+    "wave-4.wav": {
+      "seconds": 0.274375,
+      "speed": 1.8,
+      "sha256": "322290bf63765321e1645132c1646ae8966ad68b52846f155d33edcd78715e68"
+    },
+    "wave-5.wav": {
+      "seconds": 0.23345833333333332,
+      "speed": 2.0,
+      "sha256": "67f522e9b6f30cebf28de5f6409ccbeadb32afce72cf3fa14c8d57d4ce12510e"
+    }
+  }
+}
